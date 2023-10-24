@@ -4,7 +4,8 @@ import { fileURLToPath } from 'url';
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
-
+import userRoutes from './routes/user.js';
+import carRoutes from './routes/car.js'
 // configure dotenv
 dotenv.config();
 const PORT = process.env.PORT || 3005;
@@ -29,6 +30,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(PATH, 'public')));
 
 // use routes
+app.use(userRoutes);
+app.use(carRoutes);
 
 // handle 404
 app.use('*', (req, res) => {

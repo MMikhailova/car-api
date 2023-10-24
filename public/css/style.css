@@ -1,37 +1,279 @@
-.cars {
-    margin-top: 70px;
+/* style.css */
+
+body {
+ font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.car {
-    width: 400px;
-    height: 400px;
-    margin: 10px auto;
-    border: 1px solid black;
-    border-radius: 8px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.container {
+   width: 500px;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.message-container{
+    display: flex;
+   align-items: center;
+    flex-direction: column;
+     width: 500px;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
 }
 
-.car h1,
-.car h4 {
-    text-align: center;
+label {
+    display: block;
+    font-weight: bold;
 }
-.car img {
+
+input[type="text"], input[type="email"], input[type="password"],input[type="url"], input[type="number"] {
     width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+     list-style-type: circle;
+    padding: 5px;
+}
+
+button.btn {
+    padding: 10px 20px;
+    background-color:rgb(170, 25, 25);
+    opacity: 80%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button.btn:hover {
+    background-color: darkred;
+}
+
+.inline{
+    display: inline-flex;
+    align-items:center;
+}
+.inline img{
+max-width:50px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.centered{
+    text-align: center;
+} */
+
+header {
+    width:100%;
+    height: 100px;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width:20%;
+    height: 100%;
+}
+.logo img {
+     height:100px;
+     width: 100%;
+    object-fit: cover;
 }
 
 nav ul {
     list-style: none;
+  padding-right: 2rem;
+    margin: 0;
     display: flex;
-    justify-content: space-around;
+    
 }
 
-nav ul li {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: cursive;
+nav li {
+    margin: 0 20px;
 }
 
-nav ul li a {
+nav a {
+    color: #fff;
     text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
 }
+
+nav a:hover {
+    color: #ccc;
+}
+
+/* Add media query for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        text-align: center;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        font-size: 1.2em;
+    }
+
+    header {
+        position: relative;
+    }
+
+    header .logo {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
+
+    header .toggle-btn {
+        display: block;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+}
+
+
+.cars {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem -10px;
+    justify-content: space-around;
+    
+}
+
+.car {
+    position: relative;
+    box-sizing: border-box;
+    width: 25%;
+    padding: 1rem;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.car img {
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.car h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.car p {
+ position: absolute;
+    bottom: 20px;
+     width: 100%;
+  text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+
+
+/* 
+.form-container {
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+@media screen and (max-width: 768px) {
+    .car {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .car {
+        width: 100%;
+    }
+} */
